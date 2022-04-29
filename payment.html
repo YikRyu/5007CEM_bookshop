@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Bookshop  - Home</title>
+    <link rel="stylesheet" href="css/stylesheet.css" />
+</head>
+
+<body>
+    <div style="width:100%; height:70px; margin-bottom:-25px;">
+        <!--Header-->
+        <div style="float:left;">
+            <a href="index.html"><img src="#" width="100" height="50" alt="bookshop_logo" /></a>
+        </div>
+
+        <div class="header">
+            <ul class="header">
+                <li class="header"><a href="user.html"><img src="#" width="45" height="45" alt="user_profile" /></a></li>
+                <li class="header"><a href="cart.html"><img src="#" width="45" height="45" alt="shopping_cart" /></a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Navigation-->
+    <div class="navbar">
+        <ul id="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="popular.html">Recent Populars</a></li>
+            <li><a href="new.html">Newly Arrived</a></li>
+            <li>
+                <a href="#">Books According to Genre</a>
+                <ul>
+                    <li><a href="listing.html">Fiction</a></li>
+                    <li><a href="listing.html">Non-Fiction</a></li>
+                    <li><a href="listing.html">Textbook</a></li>
+                    <li><a href="listing.html">Kids</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    &nbsp; <!--spacing-->
+    <!--Content-->
+    <h1>Payment and Shipping</h1>
+    <p style="color:red;">***Please check your payment and shipping information before confirming!!</p>
+    <div>
+        <p><b>Name: </b>Lorem Ipsium</p>
+        <p><b>CardNo: </b> 1234 5678 9012</p>
+        <p><b>Bank Name: </b> Maybank</p>
+        <p><b>Address to Ship to: </b></p>
+        <p>
+            Cecilia Chapman,
+            711-2880 Nulla St.,
+            Mankato Mississippi 96522.
+        </p>
+    </div>
+
+    <!--Total and confirmation/ edit-->
+    <div style="float:right; margin-top:70px; padding-right:25px;" align="right">
+        <table width="200">
+            <tr>
+                <td width="50%"><h2 align="left">Total: </h2></td>
+                <td width="50%"><h2 align="right">$35.98</h2></td>
+            </tr>
+        </table>
+
+        <div>
+            <button type="submit">
+                <input type="hidden" name="editPayment" value="true" />Edit Payment Info
+            </button>
+            <button type="submit">
+                <input type="hidden" name="submitted" value="true" />Confirm Purchase
+            </button>
+        </div>
+    </div>
+
+
+
+    &nbsp; <!--spacing-->
+    <!--Footer-->
+    <footer>
+        <div style="float:left;">
+            <a href="index.html"><img src="#" width="90" height="45" alt="bookshop_logo" style="float:left;" /></a>
+        </div>
+
+        <div class="header">
+            <h3>Payments Accepted</h3>
+            <table>
+                <tr>
+                    <td><img src="#" width="20" height="20" alt="visa" /></td>
+                    <td><img src="#" width="20" height="20" alt="debit" /></td>
+                    <td><img src="#" width="20" height="20" alt="master" /></td>
+                </tr>
+            </table>
+        </div>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Bookshop  - Home</title>
+    <link rel="stylesheet" href="css/stylesheet.css" />
+</head>
+
+<body>
+    <div style="width:100%; height:70px; margin-bottom:-25px;">
+        <!--Header-->
+        <div style="float:left;">
+            <a href="index.html"><img src="#" width="100" height="50" alt="bookshop_logo" /></a>
+        </div>
+
+        <div class="header">
+            <ul class="header">
+                <li class="header"><a href="user.html"><img src="#" width="45" height="45" alt="user_profile" /></a></li>
+                <li class="header"><a href="cart.html"><img src="#" width="45" height="45" alt="shopping_cart" /></a> </li>
+            </ul>
+        </div>
+    </div>
+
+    <!--Navigation-->
+    <div class="navbar">
+        <ul id="nav">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="popular.html">Recent Populars</a></li>
+            <li><a href="new.html">Newly Arrived</a></li>
+            <li>
+                <a href="#">Books According to Genre</a>
+                <ul>
+                    <li><a href="listing.html">Fiction</a></li>
+                    <li><a href="listing.html">Non-Fiction</a></li>
+                    <li><a href="listing.html">Textbook</a></li>
+                    <li><a href="listing.html">Kids</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    &nbsp; <!--spacing-->
+    <!--Content-->
+    <div style="width:25%; margin:auto;">
+        <form action="#" method="POST">
+            <h1>Account Registration</h1>
+            <div>
+                <p>Username:</p>
+                <input type="text" name="username" id="username"/>
+            </div>
+
+            <div>
+                <p>Password:</p>
+                <input type="password" name="password" id="password"/>
+            </div>
+
+            <div>
+                <p>Name:</p>
+                <input type="text" name="fullname" id="fullname"/>
+            </div>
+
+            <div style="float:right; padding-right:70px;">
+                <button type="submit">
+                    <input type="hidden" name="submitted" value="true"/>Login
+                </button>
+            </div>
+            <p>New here? <a href="register.html">Sign up now!</a></p>
+        </form>
+    </div>
+
+
+    &nbsp; <!--spacing-->
+
+    <!--Footer-->
+    <footer>
+        <div style="float:left;">
+            <a href="index.html"><img src="#" width="90" height="45" alt="bookshop_logo" style="float:left;" /></a>
+        </div>
+
+        <div class="header">
+            <h3>Payments Accepted</h3>
+            <table>
+                <tr>
+                    <td><img src="#" width="20" height="20" alt="visa" /></td>
+                    <td><img src="#" width="20" height="20" alt="debit" /></td>
+                    <td><img src="#" width="20" height="20" alt="master" /></td>
+                </tr>
+            </table>
+        </div>
+    </footer>
+</body>
+
+</html>

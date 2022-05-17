@@ -3,21 +3,23 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Bookshop  - Home</title>
+    <title>Bookshop  - Thank You for Purchasing!</title>
     <link rel="stylesheet" href="css/stylesheet.css" />
 </head>
 
 <body>
-    <div style="width:100%; height:70px; margin-bottom:-25px;">
+    <div class="header-container">
         <!--Header-->
-        <div style="float:left;">
-            <a href="index.html"><img src="#" width="100" height="50" alt="bookshop_logo" /></a>
+        <div class="header-logo">
+            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
         </div>
 
         <div class="header">
             <ul class="header">
-                <li class="header"><a href="user.html"><img src="#" width="45" height="45" alt="user_profile" /></a></li>
-                <li class="header"><a href="cart.html"><img src="#" width="45" height="45" alt="shopping_cart" /></a> </li>
+                <li class="header"><img class="search" src="img/search.png" alt="search" /></li>
+                <li class="header"><input class="search" type="text" name="search" id="search" placeholder="Enter keywords here to search" /></li>
+                <li class="header"><a href="user.html"><img src="img/user.png" class="header" alt="user_profile" /></a></li>
+                <li class="header"><a href="cart.html"><img src="img/cart.jpeg" class="header" alt="shopping_cart" /></a> </li>
             </ul>
         </div>
     </div>
@@ -42,12 +44,12 @@
 
     &nbsp; <!--spacing-->
     <!--Content-->
-    <div style="width:25%; margin:auto;">
+    <div class="content-wrapper">
         <h1>Purchase Confirmed</h1>
         <p>Thank you for purchasing and using our site!</p>
 
-        <div style="float:right;">
-            <p><a href="index.html">Back to Home</a></p>
+        <div class="post-payment">
+            <p><a class="post-payment-link" href="index.html">Back to Home</a></p>
         </div>
     </div>
 
@@ -55,17 +57,17 @@
     &nbsp; <!--spacing-->
     <!--Footer-->
     <footer>
-        <div style="float:left;">
-            <a href="index.html"><img src="#" width="90" height="45" alt="bookshop_logo" style="float:left;" /></a>
+        <div class="header-logo">
+            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
         </div>
 
         <div class="header">
             <h3>Payments Accepted</h3>
             <table>
                 <tr>
-                    <td><img src="#" width="20" height="20" alt="visa" /></td>
-                    <td><img src="#" width="20" height="20" alt="debit" /></td>
-                    <td><img src="#" width="20" height="20" alt="master" /></td>
+                    <td><img class="footer-payment" src="img/visa.jpeg" alt="visa" /></td>
+                    <td><img class="footer-payment" src="img/debit.png" alt="debit" /></td>
+                    <td><img class="footer-payment" src="img/master.png" alt="master" /></td>
                 </tr>
             </table>
         </div>

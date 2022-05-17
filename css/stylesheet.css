@@ -1,4 +1,9 @@
-﻿body{
+﻿/*overall-content*/
+html{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -6,7 +11,47 @@
     margin-right: 7%;
 }
 
-div.header {
+h1{
+    color:black;
+}
+
+p{
+    color: #402306;
+}
+
+input, button{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+a{
+    text-decoration: none;
+    color: #342d75;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #4d82d1;
+}
+
+/*header*/
+.header-container{
+    width:100%;
+    height:70px;
+    margin-bottom:25px;
+}
+
+div.header-logo{
+    float:left;
+}
+
+img.header-logo{
+    width:120px;
+    height:55px;
+    padding-top:7px;
+    padding-left:10px;
+}
+
+div.header{
     float:right; 
     padding-right:25px;
 }
@@ -21,6 +66,31 @@ li.header {
     padding:5px;
 }
 
+img.search{
+    width:30px;
+    height:30px;
+}
+
+input.search{
+    border: none;
+    border-bottom: 1px solid grey;
+    line-height: 25px;
+    width:100px;
+}
+
+input.search:hover{
+    border: none;
+    border-bottom: 1px solid black;
+    line-height: 25px;
+    width:100px;
+}
+
+img.header{
+    width:35px;
+    height:35px;
+}
+
+/*navbar*/
 div.navbar{
     margin-left:25%;
     margin-right:25%;
@@ -37,14 +107,14 @@ div.navbar{
 #nav li {
     display: block;
     float: left;
-    width:25%;
-    margin:auto;
+    width: 25%;
+    margin: auto;
 }
 
 #nav li ul li{
-    float: none;
+    float:none;
     width:inherit;
-    background-color:white;
+    background-color:none;
 }
 
 #nav li ul {
@@ -62,15 +132,144 @@ div.navbar{
 }
 
 #nav a {
+    text-align: center;
     padding: 10px 15px 10px 15px;
 }
 
 #nav a:hover {
-    border-bottom: 1px solid;
+    border-bottom: 3px solid;
+    box-shadow: 0 0 6px grey;
 }
 
+/*footer*/
 footer{
     margin-top:auto;
     padding:10px;
 }
 
+img.footer-payment{
+    width:25px;
+    height:25px;
+    padding-left:7px;
+    padding-right:7px;
+}
+
+/*content-general*/
+div.content-wrapper-login-regis{
+    width:25%;
+    margin:auto;
+}
+
+div.content-wrapper{
+
+}
+
+/*content-index-listing*/
+h1.index-listing{
+    margin-bottom: -15px;
+}
+
+img.book-table{
+    width:95px;
+    height:200px;
+}
+
+ul.book-table{
+    list-style-type: none;
+}
+
+td.listing{
+    padding:20px;
+}
+
+/*content-book*/
+div.add-cart{
+    margin-top:10px;
+}
+
+button.add-cart{
+    padding: 7px 10px 7px 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 15px;
+    text-align:center;
+    color: black;
+    border: none;
+    background-color: #5f9fff;
+}
+
+button.add-cart:hover{
+    padding: 7px 10px 7px 10px;
+    color: aliceblue;
+    font-size: 15px;
+    border: none;
+    background-color: #342d75;
+}
+
+p.price{
+    font-style:bold;
+}
+
+/*content-login*/
+h1.login-regis{
+    margin-bottom:15px;
+}
+
+p.login-regis{
+    margin-bottom:-1px;
+}
+
+input.login-regis{
+    border: none;
+    border-bottom: 2px solid grey;
+    line-height: 25px;
+    width:170px;
+}
+
+input.login-regis:hover{
+    border: none;
+    border-bottom: 2px solid black;
+    line-height: 25px;
+    width:170px;
+}
+
+div.login-regis{
+    float:right;
+}
+
+button.login-regis{
+    padding: 7px 10px 7px 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    text-align:center;
+    border: 1px solid;
+    color: #342d75;
+    background-color: white;
+}
+
+button.login-regis:hover{
+    padding: 7px 10px 7px 10px;
+    color: #4d82d1;
+    font-size: 17px;
+    border: 1px solid;
+    box-shadow: 0 0 6px grey;
+    background-color: aliceblue;
+}
+
+/**/
+
+/*content-post-payment*/
+div.post-payment{
+    float: right;
+    margin-right: -15px;
+}
+
+a.post-payment-link{
+    padding: 10px 15px 10px 15px;
+}
+
+a.post-payment-link:hover{ 
+    border-bottom: 3px solid;
+    box-shadow: 0 0 6px grey;
+}

@@ -44,36 +44,36 @@
 
     &nbsp; <!--spacing-->
     <!--Content-->
-    <div style="width:80%; margin:auto;">
+    <div class="content-wrapper">
         <form action="#" method="POST">
             <h1>Edit Payment Info</h1>
             <div>
                 <p>
                     Name:
-                    <input type="text" name="fullname" id="fullname"/>
+                    <input class="login-regis" type="text" name="fullname" id="fullname"/>
                 </p>
             </div>
 
             <div>
                 <p>
                     Card No.:
-                    <input type="number" name="cardNo" id="cardNo"/>
+                    <input class="login-regis" type="number" name="cardNo" id="cardNo"/>
                 </p>
             </div>
 
             <div>
                 <p>
                     Bank Name:
-                    <input type="text" name="bankName"id="bankName"/>
+                    <input class="login-regis" type="text" name="bankName"id="bankName"/>
                 </p>
             </div>
 
             <div>
-                <p style="margin-bottom:10px;">Address:</p>
+                <p>Address:</p>
                 <textarea id="address" name="address" rows="5" cols="120"></textarea>
             </div>
 
-            <div style="float:right; padding-right:65px;">
+            <div class="edit-payment">
                 <button type="submit">
                     <input type="hidden" name="submitted" value="true"/>Edit
                 </button>

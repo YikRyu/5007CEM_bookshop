@@ -47,15 +47,15 @@
     <h1>Shopping Cart</h1>
     <div>
         <div>
-            <div style="float:left;">
+            <div class="cart">
                 <table>
                     <tr>
-                        <td style="padding:20px;">
-                            <img src="#" width="100" height="275" alt="book_cover" />
+                        <td class="cart">
+                            <img class="book-table" src="img/cover.jpeg" alt="book_cover" />
                         </td>
 
                         <td>
-                            <ul>
+                            <ul class="cart">
                                 <li><a href="#">Name</a></li>
                                 <li>Author</li>
                             </ul>
@@ -64,7 +64,7 @@
                 </table>
             </div>
 
-            <div style="float:right; padding-right:25px;">
+            <div class="cart-price">
                 <h2>$24.99</h2>
             </div>
         </div>
@@ -72,15 +72,15 @@
 
     <div>
         <div>
-            <div style="float:left;">
+            <div class="cart">
                 <table>
                     <tr>
-                        <td style="padding:20px;">
-                            <img src="#" width="100" height="275" alt="book_cover" />
+                        <td class="cart">
+                            <img class="book-table" src="img/cover.jpeg" alt="book_cover" />
                         </td>
 
                         <td>
-                            <ul>
+                            <ul class="cart">
                                 <li><a href="#">Name</a></li>
                                 <li>Author</li>
                             </ul>
@@ -89,26 +89,30 @@
                 </table>
             </div>
 
-            <div style="float:right; padding-right:25px;">
+            <div class="cart-price">
                 <h2>$10.99</h2>
             </div>
         </div>
     </div>
 
     <!--Total-->
-    <div style="float:right; margin-top:70px; padding-right:25px;" align="right">
-        <table width="200">
+    <div class="payment">
+        <table class="payment">
             <tr>
-                <td width="50%"><h2 align="left">Total: </h2></td>
-                <td width="50%"><h2 align="right">$35.98</h2></td>
+                <td class="payment"><h2 class="payment-total">Total: </h2></td>
+                <td class="payment"><h2 class="payment-price">$35.98</h2></td>
             </tr>
         </table>
 
-        <div>
-            <button type="submit">
-                <input type="hidden" name="submitted" value="true"/>Confirm Purchase
-            </button>
-        </div>
+        <table>
+            <tr>
+                <td>
+                    <button class="payment" type="submit">
+                        <input type="hidden" name="editPayment" value="true" />Confirm Purchase
+                    </button>
+                </td>
+            </tr>
+        </table>
     </div>
 
 

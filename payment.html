@@ -44,8 +44,8 @@
 
     &nbsp; <!--spacing-->
     <!--Content-->
-    <h1>Payment and Shipping</h1>
-    <p style="color:red;">***Please check your payment and shipping information before confirming!!</p>
+    <h1 class="payment">Payment and Shipping</h1>
+    <p class="warning">***Please check your payment and shipping information before confirming!!</p>
     <div>
         <p><b>Name: </b>Lorem Ipsium</p>
         <p><b>CardNo: </b> 1234 5678 9012</p>
@@ -59,22 +59,29 @@
     </div>
 
     <!--Total and confirmation/ edit-->
-    <div style="float:right; margin-top:70px; padding-right:25px;" align="right">
-        <table width="200">
+    <div class="payment">
+        <table class="payment">
             <tr>
-                <td width="50%"><h2 align="left">Total: </h2></td>
-                <td width="50%"><h2 align="right">$35.98</h2></td>
+                <td class="payment"><h2 class="payment-total">Total: </h2></td>
+                <td class="payment"><h2 class="payment-price">$35.98</h2></td>
             </tr>
         </table>
 
-        <div>
-            <button type="submit">
-                <input type="hidden" name="editPayment" value="true" />Edit Payment Info
-            </button>
-            <button type="submit">
-                <input type="hidden" name="submitted" value="true" />Confirm Purchase
-            </button>
-        </div>
+        <table>
+            <tr>
+                <td>
+                    <button class="payment" type="submit">
+                        <input type="hidden" name="editPayment" value="true" />Edit Payment Info
+                    </button>
+                </td>
+
+                <td>
+                    <button class="payment" type="submit">
+                        <input type="hidden" name="submitted" value="true" />Confirm Purchase
+                    </button>
+                </td>
+            </tr>
+        </table>
     </div>
 
 

@@ -43,50 +43,56 @@
 
     &nbsp; <!--spacing-->
     <!--Content-->
-    <div style="width:80%; margin:auto;">
+    <div class="content-wrapper">
         <h1>Book Details</h1>
         <div>
             <table>
                 <tr>
-                    <td style="padding:50px;"><img src="#" width="150" height="325" alt="book_cover" /></td>
+                    <td><img class="book-detail" src="img/cover.jpeg" alt="book_cover" /></td>
                     <td>
                         <p><b>Book Name</b></p>
                         <p><b>Author</b></p>
                         <p>Description...</p>
                         <p><b>$29.99</b></p>
+                        <div class="add-cart">
+                            <button class="add-cart" type="submit">
+                                <input type="hidden" name="submitted" value="true" />Add to Cart
+                            </button>
+                        </div>
                     </td>
                 </tr>
             </table>
         </div>
 
-        <hr size="1" noshade style="color:black; background-color:black;"/>
+        <hr class="book-detail" noshade/>
         
         <div>
-            <h3>Reviews and Ratings</h3>
-            <div style="width:77%; margin:auto;">
+            <h2>Reviews and Ratings</h2>
+            <div class="review-user-wrapper">
                 <p><b>Username</b></p>
                 <p>&#9733; &#9733; &#9733; &#9733; &#9734;</p>
                 <p>Lerom ipsium example of review</p>
             </div>
 
-            <hr size="1" noshade style="color:black; background-color:black; width:77%; margin:auto;" />
+            <hr class="review" noshade/>
 
-            <div style="width:77%; margin:auto;">
+            <div class="review-user-wrapper">
                 <p><b>Username</b></p>
                 <p>&#9733; &#9733; &#9733; &#9733; &#9734;</p>
                 <p>Lerom ipsium example of review</p>
             </div>
         </div>
 
-        <div style="padding:10px; border:thin solid black; height:230px;">
-            <div style="width:77%; margin:auto;">
+        <div class="write-review">
+            <div class="review-user-wrapper">
                 <h4>Write your review about the book!</h4>
                 <p>&#9734; &#9734; &#9734; &#9734; &#9734;</p>
                 <textarea id="review" name="review" rows="5" cols="95"></textarea>
+                <br/> <!--spacing-->
                 <input type="checkbox" id="anonymous" name="anonymous" value="Anonymous">
                 <label for="anonymous">Review as anonymous.</label>
             </div>
-            <div style="float:right; padding-right:125px;">
+            <div class="review-button">
                 <button type="submit">
                     <input type="hidden" name="submitted" value="true" />Review
                 </button>

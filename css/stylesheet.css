@@ -19,8 +19,20 @@ p{
     color: #402306;
 }
 
-input, button{
+input, button, textarea{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+input{
+    border: none;
+    border-bottom: 2px solid grey;
+    line-height: 25px;
+}
+
+input:hover{
+    border: none;
+    border-bottom: 2px solid black;
+    line-height: 25px;
 }
 
 a{
@@ -31,6 +43,26 @@ a{
 a:hover{
     text-decoration: none;
     color: #4d82d1;
+}
+
+button{
+    padding: 7px 10px 7px 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    text-align:center;
+    border: 1px solid;
+    color: #342d75;
+    background-color: white;
+}
+
+button:hover{
+    padding: 7px 10px 7px 10px;
+    color: #4d82d1;
+    font-size: 17px;
+    border: 1px solid;
+    box-shadow: 0 0 6px grey;
+    background-color: aliceblue;
 }
 
 /*header*/
@@ -161,7 +193,8 @@ div.content-wrapper-login-regis{
 }
 
 div.content-wrapper{
-
+    width:80%;
+    margin:auto;
 }
 
 /*content-index-listing*/
@@ -171,7 +204,7 @@ h1.index-listing{
 
 img.book-table{
     width:95px;
-    height:200px;
+    height:170px;
 }
 
 ul.book-table{
@@ -206,11 +239,44 @@ button.add-cart:hover{
     background-color: #342d75;
 }
 
-p.price{
-    font-style:bold;
+img.book-detail{
+    width:190px;
+    height:325px;
+    padding:30px;
 }
 
-/*content-login*/
+hr.book-detail{
+    size:1px;
+    color:black;
+    background-color:black;
+}
+
+hr.review{
+    size:1px;
+    color:black;
+    background-color:black;
+    width:77%;
+    margin:auto;
+}
+
+div.review-user-wrapper{
+    width:77%;
+    margin:auto;
+}
+
+div.write-review{
+    padding:15px;
+    border:thin solid black;
+    height:230px;
+}
+
+div.review-button{
+    float:right;
+    padding-right:125px;
+}
+
+
+/*content-login-regis*/
 h1.login-regis{
     margin-bottom:15px;
 }
@@ -220,16 +286,6 @@ p.login-regis{
 }
 
 input.login-regis{
-    border: none;
-    border-bottom: 2px solid grey;
-    line-height: 25px;
-    width:170px;
-}
-
-input.login-regis:hover{
-    border: none;
-    border-bottom: 2px solid black;
-    line-height: 25px;
     width:170px;
 }
 
@@ -237,27 +293,67 @@ div.login-regis{
     float:right;
 }
 
-button.login-regis{
-    padding: 7px 10px 7px 10px;
-    display: block;
-    text-decoration: none;
-    font-size: 17px;
-    text-align:center;
-    border: 1px solid;
-    color: #342d75;
-    background-color: white;
+/*content-edit-payment*/
+div.edit-payment{
+    float:right;
+    padding-right:100px;
 }
 
-button.login-regis:hover{
-    padding: 7px 10px 7px 10px;
-    color: #4d82d1;
-    font-size: 17px;
-    border: 1px solid;
-    box-shadow: 0 0 6px grey;
-    background-color: aliceblue;
+/*content-shopping-cart*/
+div.cart{
+    float:left;
 }
 
-/**/
+td.cart{
+    padding:20px;
+}
+
+ul.cart{
+    list-style-type:none;
+}
+
+div.cart-price{
+    float:right;
+    padding-top:70px;
+    padding-right:25px;
+}
+
+/*content-payment*/
+h1.payment{
+    margin-bottom:-10px;
+}
+
+p.warning{
+    color:red;
+}
+
+div.payment{
+    float:right;
+    margin-top:70px;
+    margin-left:auto;
+    margin-right:25px;
+}
+
+table.payment{
+    width:200px;
+}
+
+td.payment{
+    width:50%;
+}
+
+h2.payment-total{
+    text-align:left;
+}
+
+h2.payment-price{
+    text-align:right;
+}
+
+button.payment{
+    margin:3px;
+    width: 150px;
+}
 
 /*content-post-payment*/
 div.post-payment{

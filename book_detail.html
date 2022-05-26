@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Bookshop  - Book Details</title>
     <link rel="stylesheet" href="css/stylesheet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="header-container">
-        <!--Header-->
+<body class="custom">
+    <!--Header-->
+    <div class="header-wrapper">
         <div class="header-logo">
-            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
+            <a href="index.html"><img class="header-logo" src="img/logo.png" alt="bookshop_logo" /></a>
         </div>
 
         <div class="header">
@@ -23,23 +25,28 @@
             </ul>
         </div>
     </div>
+
+
     <!--Navigation-->
-    <div class="navbar">
-        <ul id="nav">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="popular.html">Recent Populars</a></li>
-            <li><a href="new.html">Newly Arrived</a></li>
-            <li>
-                <a href="#">Books According to Genre</a>
-                <ul>
-                    <li><a href="listing.html">Fiction</a></li>
-                    <li><a href="listing.html">Non-Fiction</a></li>
-                    <li><a href="listing.html">Textbook</a></li>
-                    <li><a href="listing.html">Kids</a></li>
-                </ul>
-            </li>
-        </ul>
+    <div class="navbar-wrapper">
+        <div class="navbar">
+            <ul id="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="popular.html">Recent Populars</a></li>
+                <li><a href="new.html">Newly Arrived</a></li>
+                <li>
+                    <a href="#">Books According to Genre</a>
+                    <ul>
+                        <li><a href="listing.html">Fiction</a></li>
+                        <li><a href="listing.html">Non-Fiction</a></li>
+                        <li><a href="listing.html">Textbook</a></li>
+                        <li><a href="listing.html">Kids</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
+
 
     &nbsp; <!--spacing-->
     <!--Content-->
@@ -48,7 +55,11 @@
         <div>
             <table>
                 <tr>
-                    <td><img class="book-detail" src="img/cover.jpeg" alt="book_cover" /></td>
+                    <td class="img-book-detail">
+                        <div class="img-book-detail">
+                            <img class="book-detail" src="img/cover.jpeg" alt="book_cover" />
+                        </div>
+                    </td>
                     <td>
                         <p><b>Book Name</b></p>
                         <p><b>Author</b></p>
@@ -64,17 +75,17 @@
             </table>
         </div>
 
-        <hr class="book-detail" noshade/>
-        
+        <hr class="book-detail" noshade />
+
         <div>
-            <h2>Reviews and Ratings</h2>
+            <h3>Reviews and Ratings</h3>
             <div class="review-user-wrapper">
                 <p><b>Username</b></p>
                 <p>&#9733; &#9733; &#9733; &#9733; &#9734;</p>
                 <p>Lerom ipsium example of review</p>
             </div>
 
-            <hr class="review" noshade/>
+            <hr class="review" noshade />
 
             <div class="review-user-wrapper">
                 <p><b>Username</b></p>
@@ -87,8 +98,8 @@
             <div class="review-user-wrapper">
                 <h4>Write your review about the book!</h4>
                 <p>&#9734; &#9734; &#9734; &#9734; &#9734;</p>
-                <textarea id="review" name="review" rows="5" cols="95"></textarea>
-                <br/> <!--spacing-->
+                <textarea id="review" name="review" rows="5" cols="90"></textarea>
+                <br /> <!--spacing-->
                 <input type="checkbox" id="anonymous" name="anonymous" value="Anonymous">
                 <label for="anonymous">Review as anonymous.</label>
             </div>
@@ -98,7 +109,7 @@
                 </button>
             </div>
         </div>
-        
+
     </div>
 
 
@@ -107,10 +118,10 @@
     <!--Footer-->
     <footer>
         <div class="header-logo">
-            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
+            <a href="index.html"><img class="footer-logo" src="img/logo.png" alt="bookshop_logo" /></a>
         </div>
 
-        <div class="header">
+        <div class="footer-payment">
             <h3>Payments Accepted</h3>
             <table>
                 <tr>
@@ -121,6 +132,8 @@
             </table>
         </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Bookshop  - Payment</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookshop  - Book Details</title>
     <link rel="stylesheet" href="css/stylesheet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="header-container">
-        <!--Header-->
+<body class="custom">
+    <!--Header-->
+    <div class="header-wrapper">
         <div class="header-logo">
-            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
+            <a href="index.html"><img class="header-logo" src="img/logo.png" alt="bookshop_logo" /></a>
         </div>
 
         <div class="header">
@@ -44,45 +46,48 @@
 
     &nbsp; <!--spacing-->
     <!--Content-->
-    <h1 class="payment">Payment and Shipping</h1>
-    <p class="warning">***Please check your payment and shipping information before confirming!!</p>
-    <div>
-        <p><b>Name: </b>Lorem Ipsium</p>
-        <p><b>CardNo: </b> 1234 5678 9012</p>
-        <p><b>Bank Name: </b> Maybank</p>
-        <p><b>Address to Ship to: </b></p>
-        <p>
-            Cecilia Chapman,
-            711-2880 Nulla St.,
-            Mankato Mississippi 96522.
-        </p>
+    <div class="content-wrapper-wider">
+        <h1 class="payment">Payment and Shipping</h1>
+        <p class="warning">***Please check your payment and shipping information before confirming!!</p>
+        <div>
+            <p><b>Name: </b>Lorem Ipsium</p>
+            <p><b>CardNo: </b> 1234 5678 9012</p>
+            <p><b>Bank Name: </b> Maybank</p>
+            <p><b>Address to Ship to: </b></p>
+            <p>
+                Cecilia Chapman,
+                711-2880 Nulla St.,
+                Mankato Mississippi 96522.
+            </p>
+        </div>
+
+        <!--Total and confirmation/ edit-->
+        <div class="payment">
+            <table class="payment">
+                <tr>
+                    <td class="payment"><h2 class="payment-total">Total: </h2></td>
+                    <td class="payment"><h2 class="payment-price">$35.98</h2></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <td>
+                        <button class="payment" type="submit">
+                            <input type="hidden" name="editPayment" value="true" />Edit Payment Info
+                        </button>
+                    </td>
+
+                    <td>
+                        <button class="payment" type="submit">
+                            <input type="hidden" name="submitted" value="true" />Confirm Purchase
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-
-    <!--Total and confirmation/ edit-->
-    <div class="payment">
-        <table class="payment">
-            <tr>
-                <td class="payment"><h2 class="payment-total">Total: </h2></td>
-                <td class="payment"><h2 class="payment-price">$35.98</h2></td>
-            </tr>
-        </table>
-
-        <table>
-            <tr>
-                <td>
-                    <button class="payment" type="submit">
-                        <input type="hidden" name="editPayment" value="true" />Edit Payment Info
-                    </button>
-                </td>
-
-                <td>
-                    <button class="payment" type="submit">
-                        <input type="hidden" name="submitted" value="true" />Confirm Purchase
-                    </button>
-                </td>
-            </tr>
-        </table>
-    </div>
+    
 
 
 
@@ -90,10 +95,10 @@
     <!--Footer-->
     <footer>
         <div class="header-logo">
-            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
+            <a href="index.html"><img class="footer-logo" src="img/logo.png" alt="bookshop_logo" /></a>
         </div>
 
-        <div class="header">
+        <div class="footer-payment">
             <h3>Payments Accepted</h3>
             <table>
                 <tr>
@@ -104,6 +109,9 @@
             </table>
         </div>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

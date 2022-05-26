@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Bookshop  - Listing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookshop  - Book Details</title>
     <link rel="stylesheet" href="css/stylesheet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="header-container">
-        <!--Header-->
+<body class="custom">
+    <!--Header-->
+    <div class="header-wrapper">
         <div class="header-logo">
-            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
+            <a href="index.html"><img class="header-logo" src="img/logo.png" alt="bookshop_logo" /></a>
         </div>
 
         <div class="header">
@@ -31,7 +33,7 @@
             <li><a href="popular.html">Recent Populars</a></li>
             <li><a href="new.html">Newly Arrived</a></li>
             <li>
-                <a href="#">Books According to Genre</a>
+                <a class="active" href="#">Books According to Genre</a>
                 <ul>
                     <li><a href="listing.html">Fiction</a></li>
                     <li><a href="listing.html">Non-Fiction</a></li>
@@ -44,94 +46,104 @@
 
     &nbsp; <!--spacing-->
     <!--Content-->
-    <h1 class="index-listing">Book Listing Page</h1>
-    <p>pending quote....</p>
-    <div>
-        <table>
-            <tr>
-                <td class="listing">
-                    <img src="img/cover.jpeg" class="book-table" alt="book_cover" />
-                </td>
+    <div class="content-wrapper-wider">
+        <h1>Book Listing Page</h1>
+        <p>pending quote....</p>
+        <div>
+            <table>
+                <tr>
+                    <td class="listing">
+                        <div class="img-book-table">
+                            <img src="img/cover.jpeg" class="book-table" alt="book_cover" />
+                        </div>
+                    </td>
 
-                <td>
-                    <ul class="book-table">
-                        <li><a href="#">Name</a></li>
-                        <li>Author</li>
-                        <li>Description</li>
-                        <li>Price</li>
-                        <li><div class="add-cart">
-                            <button class="add-cart" type="submit">
-                                <input type="hidden" name="submitted" value="true" />Add to Cart
-                            </button>
-                            </div>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
+                    <td>
+                        <ul class="book-table">
+                            <li><a href="#">Name</a></li>
+                            <li>Author</li>
+                            <li>Description</li>
+                            <li>Price</li>
+                            <li>
+                                <div class="add-cart">
+                                    <button class="add-cart" type="submit">
+                                        <input type="hidden" name="submitted" value="true" />Add to Cart
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <td class="listing">
+                        <div class="img-book-table">
+                            <img src="img/cover.jpeg" class="book-table" alt="book_cover" />
+                        </div>
+                    </td>
+
+                    <td>
+                        <ul class="book-table">
+                            <li><a href="#">Name</a></li>
+                            <li>Author</li>
+                            <li>Description</li>
+                            <li>Price</li>
+                            <li>
+                                <div class="add-cart">
+                                    <button class="add-cart" type="submit">
+                                        <input type="hidden" name="submitted" value="true" />Add to Cart
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <table>
+                <tr>
+                    <td class="listing">
+                        <div class="img-book-table">
+                            <img src="img/cover.jpeg" class="book-table" alt="book_cover" />
+                        </div>
+                    </td>
+
+                    <td>
+                        <ul class="book-table">
+                            <li><a href="#">Name</a></li>
+                            <li>Author</li>
+                            <li>Description</li>
+                            <li>Price</li>
+                            <li>
+                                <div class="add-cart">
+                                    <button class="add-cart" type="submit">
+                                        <input type="hidden" name="submitted" value="true" />Add to Cart
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
     </div>
-
-    <div>
-        <table>
-            <tr>
-                <td class="listing">
-                    <img src="img/cover.jpeg" class="book-table" alt="book_cover" />
-                </td>
-
-                <td>
-                    <ul class="book-table">
-                        <li><a href="#">Name</a></li>
-                        <li>Author</li>
-                        <li>Description</li>
-                        <li>Price/li>
-                        <li>
-                            <div class="add-cart">
-                                <button class="add-cart" type="submit">
-                                    <input type="hidden" name="submitted" value="true" />Add to Cart
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </div>
-
-    <div>
-        <table>
-            <tr>
-                <td class="listing">
-                    <img src="img/cover.jpeg" class="book-table" alt="book_cover" />
-                </td>
-
-                <td>
-                    <ul class="book-table">
-                        <li><a href="#">Name</a></li>
-                        <li>Author</li>
-                        <li>Description</li>
-                        <li>Price</li>
-                        <li>
-                            <div class="add-cart">
-                                <button class="add-cart" type="submit">
-                                    <input type="hidden" name="submitted" value="true" />Add to Cart
-                                </button>
-                            </div>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        </table>
-    </div>
+    
 
 
     &nbsp; <!--spacing-->
     <!--Footer-->
     <footer>
         <div class="header-logo">
-            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
+            <a href="index.html"><img class="footer-logo" src="img/logo.png" alt="bookshop_logo" /></a>
         </div>
 
-        <div class="header">
+        <div class="footer-payment">
             <h3>Payments Accepted</h3>
             <table>
                 <tr>
@@ -142,6 +154,9 @@
             </table>
         </div>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

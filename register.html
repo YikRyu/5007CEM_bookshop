@@ -3,15 +3,17 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Bookshop  - Register</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bookshop  - Book Details</title>
     <link rel="stylesheet" href="css/stylesheet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="header-container">
-        <!--Header-->
+<body class="custom">
+    <!--Header-->
+    <div class="header-wrapper">
         <div class="header-logo">
-            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
+            <a href="index.html"><img class="header-logo" src="img/logo.png" alt="bookshop_logo" /></a>
         </div>
 
         <div class="header">
@@ -44,27 +46,27 @@
 
     &nbsp; <!--spacing-->
     <!--Content-->
-    <div class="content-wrapper-login-regis">
+    <div class="login-regis">
         <form action="#" method="POST">
             <h1 class="login-regis">Account Registration</h1>
             <div>
                 <p class="login-regis">Username:</p>
-                <input class="login-regis" type="text" name="username" id="username"/>
+                <input class="login-regis" type="text" name="username" id="username" placeholder="Username"/>
             </div>
 
             <div>
                 <p class="login-regis">Password:</p>
-                <input class="login-regis" type="password" name="password" id="password"/>
+                <input class="login-regis" type="password" name="password" id="password" placeholder="Password"/>
             </div>
 
             <div>
                 <p class="login-regis">Name:</p>
-                <input class="login-regis" type="text" name="fullname" id="fullname"/>
+                <input class="login-regis" type="text" name="fullname" id="fullname" placeholder="Your Nickname"/>
             </div>
 
-            <div class="login-regis">
+            <div class="login-regis-button">
                 <button type="submit">
-                    <input type="hidden" name="submitted" value="true"/>Register
+                    <input type="hidden" name="submitted" value="true" />Register
                 </button>
             </div>
         </form>
@@ -72,14 +74,13 @@
 
 
     &nbsp; <!--spacing-->
-
     <!--Footer-->
     <footer>
         <div class="header-logo">
-            <a href="index.html"><img class="header-logo" src="img/logo.jpg" alt="bookshop_logo" /></a>
+            <a href="index.html"><img class="footer-logo" src="img/logo.png" alt="bookshop_logo" /></a>
         </div>
 
-        <div class="header">
+        <div class="footer-payment">
             <h3>Payments Accepted</h3>
             <table>
                 <tr>
@@ -90,6 +91,9 @@
             </table>
         </div>
     </footer>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>

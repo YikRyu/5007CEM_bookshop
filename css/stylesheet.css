@@ -1,25 +1,23 @@
 ﻿/*overall-content*/
-html{
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-body{
+body.custom{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
     margin-left: 7%;
     margin-right: 7%;
+    background-color:white;
 }
 
-h1{
+h1, h3{
     color:black;
+    text-decoration:underline;
 }
 
 p{
     color: #402306;
 }
 
-input, button, textarea{
+input, button, textarea, p, h1, h3, a, td, ul, li{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -36,16 +34,15 @@ input:hover{
 }
 
 a{
-    text-decoration: none;
-    color: #342d75;
+    text-decoration:none;
 }
 
 a:hover{
-    text-decoration: none;
-    color: #4d82d1;
+    text-decoration:none;
 }
 
 button{
+    margin: 5px;
     padding: 7px 10px 7px 10px;
     display: block;
     text-decoration: none;
@@ -59,43 +56,53 @@ button{
 button:hover{
     padding: 7px 10px 7px 10px;
     color: #4d82d1;
+    display: block;
+    text-decoration: none;
+    text-align:center;
     font-size: 17px;
     border: 1px solid;
     box-shadow: 0 0 6px grey;
-    background-color: aliceblue;
+    background-color:white;
 }
 
+textarea{
+    width:inherit;
+}
+
+
 /*header*/
-.header-container{
-    width:100%;
-    height:70px;
-    margin-bottom:25px;
+div.header-wrapper{
+    padding-top:5px;
+    background-color:#d6f1ff;
+    box-shadow: 0px 3px 2px lightgray;
 }
 
 div.header-logo{
     float:left;
+    margin-left:0px;
+    margin-right:auto;
 }
 
 img.header-logo{
-    width:120px;
-    height:55px;
-    padding-top:7px;
-    padding-left:10px;
+    padding:2px;
+    width:110px;
+    height:60px;
 }
 
 div.header{
-    float:right; 
-    padding-right:25px;
+    float:right;
+    margin-right:0px;
+    margin-left:auto;
 }
 
 ul.header {
     display:table; 
     list-style:none;
+    padding: 5px;
 }
 
 li.header {
     display:inline-block; 
-    padding:5px;
 }
 
 img.search{
@@ -108,6 +115,7 @@ input.search{
     border-bottom: 1px solid grey;
     line-height: 25px;
     width:100px;
+    background-color:#d6f1ff;
 }
 
 input.search:hover{
@@ -115,6 +123,7 @@ input.search:hover{
     border-bottom: 1px solid black;
     line-height: 25px;
     width:100px;
+    background-color:#d6f1ff;
 }
 
 img.header{
@@ -124,10 +133,19 @@ img.header{
 
 /*navbar*/
 div.navbar{
-    margin-left:25%;
-    margin-right:25%;
-    width:50%;
-    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:auto;
+    width:100%;
+    height:100px;
+    margin-bottom:5px;
+}
+
+.active{
+    background-color:#a2c7ff;
+    border-bottom: 3px solid;
+    color: #342d75;
 }
 
 #nav a {
@@ -137,22 +155,23 @@ div.navbar{
 }
 
 #nav li {
-    display: block;
-    float: left;
-    width: 25%;
-    margin: auto;
+    display:block;
+    float:left;
+    width:22%;
+    margin:auto;
 }
 
 #nav li ul li{
     float:none;
     width:inherit;
-    background-color:none;
+    background-color:white;
 }
 
 #nav li ul {
     display: none;
     position: absolute;
     z-index: 1;
+    height:70px;
 }
 
 #nav li:hover ul {
@@ -166,40 +185,64 @@ div.navbar{
 #nav a {
     text-align: center;
     padding: 10px 15px 10px 15px;
+    color: #342d75;
 }
 
 #nav a:hover {
     border-bottom: 3px solid;
     box-shadow: 0 0 6px grey;
+    color:#5f9fff;
 }
 
 /*footer*/
 footer{
     margin-top:auto;
-    padding:10px;
+    background-color:#a2c7ff;
+    box-shadow: 0px -1px 3px 3px lightgrey;
+}
+
+img.footer-logo{
+    padding:8px;
+    width:120px;
+    height:70px;
+}
+
+div.footer-payment{
+    float:right;
+    margin-right:20px;
+    margin-left:auto;
+    padding:3px 5px 3px 5px;
+    background-color:aliceblue;
+    border:2px dashed #342d75;
 }
 
 img.footer-payment{
-    width:25px;
+    width:30px;
     height:25px;
-    padding-left:7px;
-    padding-right:7px;
+    padding-left:5px;
+    padding-right:5px;
 }
 
 /*content-general*/
-div.content-wrapper-login-regis{
-    width:25%;
+div.content-wrapper{
+    width:90%;
     margin:auto;
+    box-shadow: 0px 1px 3px 4px lightgrey;
+    padding:20px;
 }
 
-div.content-wrapper{
-    width:80%;
+div.content-wrapper-wider{
+    width:100%;
     margin:auto;
+    box-shadow: 0px 1px 3px 4px lightgrey;
+    padding:13px;
 }
 
 /*content-index-listing*/
-h1.index-listing{
-    margin-bottom: -15px;
+div.img-book-table{
+    width:95px;
+    height:170px;
+    box-shadow: 0px 1px 3px 4px lightgrey;
 }
 
 img.book-table{
@@ -239,16 +282,26 @@ button.add-cart:hover{
     background-color: #342d75;
 }
 
+td.img-book-detail{
+    padding:15px 15px 30px 10px;
+}
+
+div.img-book-detail{
+    width:170px;
+    height:305px;
+    box-shadow: 0px 1px 3px 4px lightgrey;
+}
+
 img.book-detail{
-    width:190px;
-    height:325px;
-    padding:30px;
+    width:170px;
+    height:305px;
 }
 
 hr.book-detail{
     size:1px;
     color:black;
     background-color:black;
+    margin:auto;
 }
 
 hr.review{
@@ -267,7 +320,7 @@ div.review-user-wrapper{
 div.write-review{
     padding:15px;
     border:thin solid black;
-    height:230px;
+    height:325px;
 }
 
 div.review-button{
@@ -277,6 +330,16 @@ div.review-button{
 
 
 /*content-login-regis*/
+div.login-regis{
+    margin:auto;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 1px 3px 4px lightgrey;
+    padding: 30px;
+
+}
+
 h1.login-regis{
     margin-bottom:15px;
 }
@@ -289,14 +352,20 @@ input.login-regis{
     width:170px;
 }
 
-div.login-regis{
+div.login-regis-button{
     float:right;
+    margin:10px;
 }
 
 /*content-edit-payment*/
 div.edit-payment{
+    margin-top:10px;
     float:right;
-    padding-right:100px;
+}
+
+div.edit-address{
+    width:100%;
+    margin:auto;
 }
 
 /*content-shopping-cart*/
@@ -320,7 +389,7 @@ div.cart-price{
 
 /*content-payment*/
 h1.payment{
-    margin-bottom:-10px;
+    margin-bottom:-2px;
 }
 
 p.warning{
@@ -330,8 +399,8 @@ p.warning{
 div.payment{
     float:right;
     margin-top:70px;
+    margin-right:0px;
     margin-left:auto;
-    margin-right:25px;
 }
 
 table.payment{
@@ -362,10 +431,13 @@ div.post-payment{
 }
 
 a.post-payment-link{
+    display:block;
     padding: 10px 15px 10px 15px;
 }
 
 a.post-payment-link:hover{ 
+    display:block;
+    padding: 10px 15px 10px 15px;
     border-bottom: 3px solid;
     box-shadow: 0 0 6px grey;
 }

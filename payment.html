@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bookshop  - Book Details</title>
+    <title>Bookshop  - Payment</title>
     <link rel="stylesheet" href="css/stylesheet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js"></script>
 </head>
 
 <body class="custom">
@@ -21,7 +22,7 @@
                 <li class="header"><img class="search" src="img/search.png" alt="search" /></li>
                 <li class="header"><input class="search" type="text" name="search" id="search" placeholder="Enter keywords here to search" /></li>
                 <li class="header"><a href="user.html"><img src="img/user.png" class="header" alt="user_profile" /></a></li>
-                <li class="header"><a href="cart.html"><img src="img/cart.jpeg" class="header" alt="shopping_cart" /></a> </li>
+                <li class="header"><a href="cart.html"><img src="img/cart.png" class="header" alt="shopping_cart" /></a> </li>
             </ul>
         </div>
     </div>
@@ -50,11 +51,11 @@
         <h1 class="payment">Payment and Shipping</h1>
         <p class="warning">***Please check your payment and shipping information before confirming!!</p>
         <div>
-            <p><b>Name: </b>Lorem Ipsium</p>
-            <p><b>CardNo: </b> 1234 5678 9012</p>
-            <p><b>Bank Name: </b> Maybank</p>
+            <p><b>Name: </b><span id="fullname">Lorem Ipsium</span></p>
+            <p><b>CardNo: </b><span id="cardNo">1234 5678 9012</span></p>
+            <p><b>Bank Name: </b><span id="bankName">Maybank</span></p>
             <p><b>Address to Ship to: </b></p>
-            <p>
+            <p id="address">
                 Cecilia Chapman,
                 711-2880 Nulla St.,
                 Mankato Mississippi 96522.
@@ -62,7 +63,7 @@
         </div>
 
         <!--Total and confirmation/ edit-->
-        <div class="payment">
+        <div class="payment-content">
             <table class="payment">
                 <tr>
                     <td class="payment"><h2 class="payment-total">Total: </h2></td>
@@ -73,22 +74,47 @@
             <table>
                 <tr>
                     <td>
-                        <button class="payment" type="submit">
-                            <input type="hidden" name="editPayment" value="true" />Edit Payment Info
-                        </button>
+                        <div class="payment-button">
+                            <input class="button" type="button" id="btnEditPayment" value="Edit Payment Info" onclick="editInfo()"/>
+                        </div>
                     </td>
 
                     <td>
-                        <button class="payment" type="submit">
-                            <input type="hidden" name="submitted" value="true" />Confirm Purchase
-                        </button>
+                        <div class="payment-button">
+                            <input class="button" type="button" id="btnPurchase" value="Confirm Purchase" onclick="purchase()"/>
+                        </div>
                     </td>
                 </tr>
             </table>
         </div>
     </div>
-    
 
+    <!--js code for attribute changing-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //change the details of the user
+            $().append(); //append all the elements listed below
+            $("#fullname").text("Some Random Dudu"); //change the data to find data from db
+            $("#cardNo").text("000000000000"); //change the data to find data from db
+            $("#bankName").text("Halobank"); //change the data to find data from db
+            $("#address").text("Some random address"); //change the data to find data from db
+            });
+    </script>
+
+    <script type="text/javascript">
+        document.ready(function () {
+            //if any of the info are not a valid one, will disable purchase button
+            if ($("#bankName") === "N/A" ||
+                $("#address") === "N/A" ||
+                $("#cardNo") === "000000000000" ||
+                $("#address") === "N/A") {
+                document.querySelector("#btnPurchase").disabled = true;
+                $("#btnPurchase").attr("disabled", "disabled");
+                $("#btnPurchase").attr("class", "button-disabled");
+                $("#btnPurchase").attr("onclick", " ");
+            }
+        });
+    </script>
 
 
     &nbsp; <!--spacing-->
@@ -102,7 +128,7 @@
             <h3>Payments Accepted</h3>
             <table>
                 <tr>
-                    <td><img class="footer-payment" src="img/visa.jpeg" alt="visa" /></td>
+                    <td><img class="footer-payment" src="img/visa.png" alt="visa" /></td>
                     <td><img class="footer-payment" src="img/debit.png" alt="debit" /></td>
                     <td><img class="footer-payment" src="img/master.png" alt="master" /></td>
                 </tr>

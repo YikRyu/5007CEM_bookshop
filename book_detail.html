@@ -7,6 +7,7 @@
     <title>Bookshop  - Book Details</title>
     <link rel="stylesheet" href="css/stylesheet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js"></script>
 </head>
 
 <body class="custom">
@@ -21,7 +22,7 @@
                 <li class="header"><img class="search" src="img/search.png" alt="search" /></li>
                 <li class="header"><input class="search" type="text" name="search" id="search" placeholder="Enter keywords here to search" /></li>
                 <li class="header"><a href="user.html"><img src="img/user.png" class="header" alt="user_profile" /></a></li>
-                <li class="header"><a href="cart.html"><img src="img/cart.jpeg" class="header" alt="shopping_cart" /></a> </li>
+                <li class="header"><a href="cart.html"><img src="img/cart.png" class="header" alt="shopping_cart" /></a> </li>
             </ul>
         </div>
     </div>
@@ -57,23 +58,50 @@
                 <tr>
                     <td class="img-book-detail">
                         <div class="img-book-detail">
-                            <img class="book-detail" src="img/cover.jpeg" alt="book_cover" />
+                            <img class="book-detail" id="book-cover" src="img/cover.jpeg" alt="book_cover" />
+
                         </div>
                     </td>
                     <td>
-                        <p><b>Book Name</b></p>
-                        <p><b>Author</b></p>
-                        <p>Description...</p>
-                        <p><b>$29.99</b></p>
+                        <p><span id="book-name"><b>Book Name</b></span></p>
+                        <p><span id="book-author"><b>Author</b></span></p>
+                        <p><span id="book-desc">Description...</span></p>
+                        <p><span id="book-price"><b>$29.99</b></span></p>
                         <div class="add-cart">
-                            <button class="add-cart" type="submit">
-                                <input type="hidden" name="submitted" value="true" />Add to Cart
-                            </button>
+                            <input type="button" class="add-cart" id="addCart" value="Add to Cart" onclick="addCart()"/>
                         </div>
                     </td>
                 </tr>
             </table>
         </div>
+
+        <!--js code for book detail changing-->
+        <script type="text/javascript">
+            $(document).ready(function () {
+                //book cover changing
+                $("#book-cover").attr("src", "img/logo.png"); //change the data to find data from db
+
+                //Book Details changing
+                //change the details of the book
+                $().append();
+                $("#book-name").text("something else"); //change the data to find data from db
+                $("#book-author").text("someone else"); //change the data to find data from db
+                $("#book-desc").text("some lorem ipsium "); //change the data to find data from db
+                $("#book-price").text("$0.00"); //change the data to find data from db
+                //bold texts that needed to be bold
+                $("#book-price, #book-name, #book-author").css("font-weight", "bold");
+
+                //Review section
+                $().append();
+
+            });
+        </script>
+
+        <!--js code for storing cart infomration in session cookie-->
+
+        <script type="text/javascript">
+
+        </script>
 
         <hr class="book-detail" noshade />
 
@@ -104,15 +132,13 @@
                 <label for="anonymous">Review as anonymous.</label>
             </div>
             <div class="review-button">
-                <button type="submit">
-                    <input type="hidden" name="submitted" value="true" />Review
-                </button>
+                <input class="button" type="button" id="btnReview" value="Review" />
             </div>
         </div>
 
     </div>
 
-
+    
 
     &nbsp; <!--spacing-->
     <!--Footer-->
@@ -125,7 +151,7 @@
             <h3>Payments Accepted</h3>
             <table>
                 <tr>
-                    <td><img class="footer-payment" src="img/visa.jpeg" alt="visa" /></td>
+                    <td><img class="footer-payment" src="img/visa.png" alt="visa" /></td>
                     <td><img class="footer-payment" src="img/debit.png" alt="debit" /></td>
                     <td><img class="footer-payment" src="img/master.png" alt="master" /></td>
                 </tr>

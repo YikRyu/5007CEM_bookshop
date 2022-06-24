@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bookshop  - Book Details</title>
+    <title>Bookshop  - User Profile</title>
     <link rel="stylesheet" href="css/stylesheet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.1.min.js"></script>
 </head>
 
 <body class="custom">
@@ -21,7 +22,7 @@
                 <li class="header"><img class="search" src="img/search.png" alt="search" /></li>
                 <li class="header"><input class="search" type="text" name="search" id="search" placeholder="Enter keywords here to search" /></li>
                 <li class="header"><a href="user.html"><img src="img/user.png" class="header" alt="user_profile" /></a></li>
-                <li class="header"><a href="cart.html"><img src="img/cart.jpeg" class="header" alt="shopping_cart" /></a> </li>
+                <li class="header"><a href="cart.html"><img src="img/cart.png" class="header" alt="shopping_cart" /></a> </li>
             </ul>
         </div>
     </div>
@@ -48,12 +49,12 @@
     <!--Content-->
     <div class="content-wrapper">
         <h1>User Profile</h1>
-        <p><b>Username: </b> abcd128492</p>
-        <p><b>Name: </b> Lorem Ipsium</p>
-        <p><b>CardNo: </b> 1234 5678 9012</p>
-        <p><b>Bank Name: </b> Maybank</p>
+        <p></p><b>Username: </b><span id="username">abcd128492</span></p>
+        <p><b>Name: </b><span id="fullname">Lorem Ipsium</span></p>
+        <p><b>CardNo: </b><span id="cardNo">1234 5678 9012</span></p>
+        <p><b>Bank Name: </b><span id="bankName">Maybank</span></p>
         <p><b>Address:</b></p>
-        <p>
+        <p id="address">
             Cecilia Chapman,
             711-2880 Nulla St.,
             Mankato Mississippi 96522.
@@ -65,6 +66,26 @@
             </button>
         </div>
     </div>
+
+    <!--js code for attribute changing-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //change the details of the user
+            $().append(); //append all the elements listed below
+            $("#username").text("randomdudubird20131"); //change the data to find data from db 
+
+            $("#fullname").text("Some Random Dudu"); //change the data to find data from db
+
+            $("#cardNo").text("0293 9291 2342"); //change the data to find data from db
+
+            $("#bankName").text("Halobank"); //change the data to find data from db
+
+            $("#address").text("Some random address"); //change the data to find data from db
+
+            //bold the texts needed to be bold
+            $("#book-price").css("font-weight", "bold"); 
+        });
+    </script>
 
 
     &nbsp; <!--spacing-->
@@ -78,7 +99,7 @@
             <h3>Payments Accepted</h3>
             <table>
                 <tr>
-                    <td><img class="footer-payment" src="img/visa.jpeg" alt="visa" /></td>
+                    <td><img class="footer-payment" src="img/visa.png" alt="visa" /></td>
                     <td><img class="footer-payment" src="img/debit.png" alt="debit" /></td>
                     <td><img class="footer-payment" src="img/master.png" alt="master" /></td>
                 </tr>

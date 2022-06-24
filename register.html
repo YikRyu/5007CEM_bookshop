@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bookshop  - Book Details</title>
+    <title>Bookshop  - Register Account</title>
     <link rel="stylesheet" href="css/stylesheet.css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="js/login.js"></script>
 </head>
 
 <body class="custom">
@@ -21,7 +22,7 @@
                 <li class="header"><img class="search" src="img/search.png" alt="search" /></li>
                 <li class="header"><input class="search" type="text" name="search" id="search" placeholder="Enter keywords here to search" /></li>
                 <li class="header"><a href="user.html"><img src="img/user.png" class="header" alt="user_profile" /></a></li>
-                <li class="header"><a href="cart.html"><img src="img/cart.jpeg" class="header" alt="shopping_cart" /></a> </li>
+                <li class="header"><a href="cart.html"><img src="img/cart.png" class="header" alt="shopping_cart" /></a> </li>
             </ul>
         </div>
     </div>
@@ -47,30 +48,55 @@
     &nbsp; <!--spacing-->
     <!--Content-->
     <div class="login-regis">
-        <form action="#" method="POST">
-            <h1 class="login-regis">Account Registration</h1>
+        <form name="register" method="POST">
+            <h1 class="login-regis">Register Account</h1>
             <div>
                 <p class="login-regis">Username:</p>
-                <input class="login-regis" type="text" name="username" id="username" placeholder="Username"/>
+                <input class="login-regis" type="text" name="username" id="username" placeholder="Username" required />
             </div>
 
             <div>
                 <p class="login-regis">Password:</p>
-                <input class="login-regis" type="password" name="password" id="password" placeholder="Password"/>
+                <input class="login-regis" type="password" name="password" id="password" placeholder="Password" required />
             </div>
 
             <div>
                 <p class="login-regis">Name:</p>
-                <input class="login-regis" type="text" name="fullname" id="fullname" placeholder="Your Nickname"/>
+                <input class="login-regis" type="text" name="fullname" id="fullname" placeholder="Your Nickname" required />
             </div>
 
             <div class="login-regis-button">
-                <button type="submit">
-                    <input type="hidden" name="submitted" value="true" />Register
-                </button>
+                <input class="button" type="button" id="btnSubmit" value="Register" onclick="validate()" />
             </div>
         </form>
     </div>
+
+    <!--script file for register-->
+    <script type="text/javascript">
+        function validate(){
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var fullname = document.getElementById("fullname").value;
+
+            if(!!username && !!password && !!fullname){
+                if (username == "Formget") { //if username overlap with any one in db
+                    alert("Username has been used, please try another one!");
+                    return false;
+                }
+                else {
+                    alert("Successfully registered!");
+                    window.location = "index.html"; // Redirecting to other page.
+                    return false;
+                }
+            }
+
+            else{
+                alert("Please enter all required fields!");
+                return false;
+            }
+        }
+    </script>
+    
 
 
     &nbsp; <!--spacing-->
@@ -84,7 +110,7 @@
             <h3>Payments Accepted</h3>
             <table>
                 <tr>
-                    <td><img class="footer-payment" src="img/visa.jpeg" alt="visa" /></td>
+                    <td><img class="footer-payment" src="img/visa.png" alt="visa" /></td>
                     <td><img class="footer-payment" src="img/debit.png" alt="debit" /></td>
                     <td><img class="footer-payment" src="img/master.png" alt="master" /></td>
                 </tr>

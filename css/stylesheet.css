@@ -17,7 +17,7 @@ p{
     color: #402306;
 }
 
-input, button, textarea, p, h1, h3, a, td, ul, li{
+input, button, textarea, p, h1, h3, a, td, ul, li, span{
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
@@ -41,6 +41,7 @@ a:hover{
     text-decoration:none;
 }
 
+/*
 button{
     margin: 5px;
     padding: 7px 10px 7px 10px;
@@ -63,6 +64,42 @@ button:hover{
     border: 1px solid;
     box-shadow: 0 0 6px grey;
     background-color:white;
+}*/
+
+input.button{
+    margin: 5px;
+    padding: 7px 10px 7px 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    text-align:center;
+    border: 1px solid;
+    color: #342d75;
+    background-color: white;
+}
+
+input.button:hover{
+    padding: 7px 10px 7px 10px;
+    color: #4d82d1;
+    display: block;
+    text-decoration: none;
+    text-align:center;
+    font-size: 17px;
+    border: 1px solid;
+    box-shadow: 0 0 6px grey;
+    background-color:white;
+}
+
+input.button-disabled:disabled{
+    margin: 5px;
+    padding: 7px 10px 7px 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    text-align:center;
+    border: 1px solid;
+    color: black;
+    background-color: grey;
 }
 
 textarea{
@@ -235,14 +272,14 @@ div.content-wrapper-wider{
     width:100%;
     margin:auto;
     box-shadow: 0px 1px 3px 4px lightgrey;
-    padding:13px;
+    padding:20px;
 }
 
 /*content-index-listing*/
 div.img-book-table{
     width:95px;
     height:170px;
-    box-shadow: 0px 1px 3px 4px lightgrey;
+    box-shadow: 0px 1px 3px 3px lightgrey;
 }
 
 img.book-table{
@@ -263,7 +300,7 @@ div.add-cart{
     margin-top:10px;
 }
 
-button.add-cart{
+input.add-cart{
     padding: 7px 10px 7px 10px;
     display: block;
     text-decoration: none;
@@ -274,10 +311,12 @@ button.add-cart{
     background-color: #5f9fff;
 }
 
-button.add-cart:hover{
+input.add-cart:hover{
     padding: 7px 10px 7px 10px;
-    color: aliceblue;
+    display:block;
     font-size: 15px;
+    text-align:center;
+    color: aliceblue;
     border: none;
     background-color: #342d75;
 }
@@ -286,6 +325,7 @@ td.img-book-detail{
     padding:15px 15px 30px 10px;
 }
 
+/*book detail cover shadow*/
 div.img-book-detail{
     width:170px;
     height:305px;
@@ -357,6 +397,7 @@ div.login-regis-button{
     margin:10px;
 }
 
+
 /*content-edit-payment*/
 div.edit-payment{
     margin-top:10px;
@@ -396,7 +437,7 @@ p.warning{
     color:red;
 }
 
-div.payment{
+div.payment-content{
     float:right;
     margin-top:70px;
     margin-right:0px;
@@ -409,6 +450,7 @@ table.payment{
 
 td.payment{
     width:50%;
+    padding:20px;
 }
 
 h2.payment-total{
@@ -419,9 +461,22 @@ h2.payment-price{
     text-align:right;
 }
 
-button.payment{
+div.payment-button{
+    float:right;
     margin:3px;
     width: 150px;
+}
+
+input:disabled{
+    margin: 5px;
+    padding: 7px 10px 7px 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    text-align:center;
+    border: 1px solid;
+    color: gray;
+    background-color: lightgrey;
 }
 
 /*content-post-payment*/

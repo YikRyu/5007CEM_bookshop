@@ -41,7 +41,7 @@ a:hover{
     text-decoration:none;
 }
 
-/*
+
 button{
     margin: 5px;
     padding: 7px 10px 7px 10px;
@@ -64,7 +64,7 @@ button:hover{
     border: 1px solid;
     box-shadow: 0 0 6px grey;
     background-color:white;
-}*/
+}
 
 input.button{
     margin: 5px;

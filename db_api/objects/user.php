@@ -46,7 +46,7 @@ class User{
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    username=:username, password=:password, fullname=:fullname, cardNo=:cardNo, bankName=:bankName, address=:address" ;
+                    username=:username, password=:password, fullname=:fullname" ;
     
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -55,17 +55,11 @@ class User{
         $this->username=htmlspecialchars(strip_tags($this->username));
         $this->password=htmlspecialchars(strip_tags($this->password));
         $this->fullname=htmlspecialchars(strip_tags($this->fullname));
-        $this->cardNo=htmlspecialchars(strip_tags($this->cardNo));
-        $this->bankName=htmlspecialchars(strip_tags($this->bankName));
-        $this->address=htmlspecialchars(strip_tags($this->address));
     
         // bind values
         $stmt->bindParam(":username", $this->username);
         $stmt->bindParam(":password", $this->password);
         $stmt->bindParam(":fullname", $this->fullname);
-        $stmt->bindParam(":cardNo", $this->cardNo);
-        $stmt->bindParam(":bankName", $this->bankName);
-        $stmt->bindParam(":address", $this->address);
     
         // execute query
         if($stmt->execute()){
@@ -175,7 +169,7 @@ class User{
     
         // select all query
         $query = "SELECT
-                    userID, password, username, fullname, cardNo, bankName, address
+                    username
                 FROM
                     ". $this->table_name ." 
                 ORDER BY

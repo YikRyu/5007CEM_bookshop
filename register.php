@@ -9,7 +9,6 @@
                 
                 case 2://username used
                     alert("Username has been used, please try another one!");
-                    return false;
                     break;
 
                 case 3://one of field left empty
@@ -29,42 +28,44 @@
         $password = $_POST['password'];
         $fullname = $_POST['fullname'];
 
-        
-        
+        //connect to db api for data fetching, pass the assigned data into link for api function
+        $api_url = 'http://localhost/bookshop/db_api/user/search.php?username='. urlencode($username) ;
+
+        //fetched the data, make it into php array from json array
+        $register_details = file_get_contents($api_url);
+        $register_array = json_decode($register_details, true);
     
         //if there's any one of them empty
         if(!isset($username) || !isset($password) || !isset($fullname)){
-            //connect to db api for data fetching
-            $db_url = 'http://localhost/bookshop/db_api/user/search.php?username='. urlencode($username) ;
-
-            //fetched the data, make it into php array from json array
-            $register_details = file_get_contents($db_url);
-            $register_array = json_decode($login_details, true);
-
-            //store the data in variables
-            if(isset($register_array)){
-            }
-            else{
-            }
-
-            
             //calling the javascript function for alert box printing and page redirecting
-            echo '<script type="text/javascript">registerAlerts(3)</script>';
-        }
-        //validating credentials and login or prompt error messages if no empty data
-        else if(!isset($register_username)){
-            //telling the system that the user is entitled to be logged in
-            session_start(); //start the session
-            $_SESSION['userID'] = $login_userID;
-            $_SESSION['loggedin'] = true;
-
-            //calling the javascript function for alert box printing and page redirecting
-            echo '<script type="text/javascript">registerAlerts(1)</script>';
+            echo '<script type="text/javascript">loginAlerts(3)</script>';
         }
         else{
-            //display error message if email and password do not match data in the database
-            echo '<script type="text/javascript">registerAlerts(2)</script>';
-        }  
+            //if the api cannot find and returned no data
+            if(!isset($register_array)){
+                //calling the javascript function for alert box printing and page redirecting
+                echo '<script type="text/javascript">loginAlerts(4)</script>';
+            }
+            //if there is data returned by api 
+            else{ 
+                //store the data in variables
+                $register_username = $register_array['records'][0]['username'];
+
+                if($username==$login_username && $password==$login_password){
+                    //telling the system that the user is entitled to be logged in
+                    session_start(); //start the session
+                    $_SESSION['userID'] = $login_userID;
+                    $_SESSION['loggedin'] = true;
+    
+                    //calling the javascript function for alert box printing and page redirecting
+                    echo '<script type="text/javascript">loginAlerts(1)</script>';
+                }
+                else{
+                    //display error message if email and password do not match data in the database
+                    echo '<script type="text/javascript">loginAlerts(2)</script>';
+                }  
+            }
+        }
          
     }
 ?>

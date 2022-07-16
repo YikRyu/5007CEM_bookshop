@@ -43,39 +43,39 @@
         $login_details = file_get_contents($api_url);
         $login_array = json_decode($login_details, true);
 
-        if(!isset($login_array)){
+        //if there's any one of them empty
+        if(!isset($username) || !isset($password)){
             //calling the javascript function for alert box printing and page redirecting
-            echo '<script type="text/javascript">loginAlerts(4)</script>';
+            echo '<script type="text/javascript">loginAlerts(3)</script>';
         }
         else{
-            //store the data in variables
-            $login_userID = $login_array['records'][0]['userID'];
-            $login_username = $login_array['records'][0]['username'];
-            $login_password = $login_array['records'][0]['password'];
-        
-            //if there's any one of them empty
-            if(!isset($username) || !isset($password)){
+            //if the api cannot find and returned no data
+            if(!isset($login_array)){
                 //calling the javascript function for alert box printing and page redirecting
-                echo '<script type="text/javascript">loginAlerts(3)</script>';
+                echo '<script type="text/javascript">loginAlerts(4)</script>';
             }
-            //validating credentials and login or prompt error messages if no empty data
-            else if($username==$login_username && $password==$login_password){
-                //telling the system that the user is entitled to be logged in
-                session_start(); //start the session
-                $_SESSION['userID'] = $login_userID;
-                $_SESSION['loggedin'] = true;
+            //if there is data returned by api 
+            else{ 
+                //store the data in variables
+                $login_userID = $login_array['records'][0]['userID'];
+                $login_username = $login_array['records'][0]['username'];
+                $login_password = $login_array['records'][0]['password'];
 
-                //calling the javascript function for alert box printing and page redirecting
-                echo '<script type="text/javascript">loginAlerts(1)</script>';
+                if($username==$login_username && $password==$login_password){
+                    //telling the system that the user is entitled to be logged in
+                    session_start(); //start the session
+                    $_SESSION['userID'] = $login_userID;
+                    $_SESSION['loggedin'] = true;
+    
+                    //calling the javascript function for alert box printing and page redirecting
+                    echo '<script type="text/javascript">loginAlerts(1)</script>';
+                }
+                else{
+                    //display error message if email and password do not match data in the database
+                    echo '<script type="text/javascript">loginAlerts(2)</script>';
+                }  
             }
-            else{
-                //display error message if email and password do not match data in the database
-                echo '<script type="text/javascript">loginAlerts(2)</script>';
-            }  
         }
-
-        
-         
     }
 ?>
 

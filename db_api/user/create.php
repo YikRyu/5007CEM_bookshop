@@ -23,18 +23,14 @@
     // make sure data is not empty
     if(
         !empty($data->username) &&
-        !empty($data->name) &&
-        !empty($data->cardNo) &&
-        !empty($data->bankName) &&
-        !empty($data->address) 
+        !empty($data->password) &&
+        !empty($data->name) 
     ){
     
         // set user property values
         $user->username = $data->username;
-        $user->name = $data->name;
-        $user->cardNo = $data->cardNo;
-        $user->bankName = $data->bankName;
-        $user->address = $data->address;
+        $user->password = $data->password;
+        $user->fullname = $data->fullname;
     
         // create the new account
         if($user->create()){

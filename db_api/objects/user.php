@@ -8,7 +8,8 @@ class User{
     // object properties
     public $userID;
     public $username;
-    public $name;
+    public $password;
+    public $fullname;
     public $cardNo;
     public $bankName;
     public $address;
@@ -23,11 +24,11 @@ class User{
     
         // select all query
         $query = "SELECT
-                    userID, username, name, cardNo, bankName, address
+                    userID, password, username, fullname, cardNo, bankName, address
                 FROM
                     ". $this->table_name ." 
                 ORDER BY
-                    username ASC";
+                    userID ASC";
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);
@@ -45,21 +46,23 @@ class User{
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    username=:username, name=:name, cardNo=:cardNo, bankName=:bankName, address=:address" ;
+                    username=:username, password=:password, fullname=:fullname, cardNo=:cardNo, bankName=:bankName, address=:address" ;
     
         // prepare query
         $stmt = $this->conn->prepare($query);
     
         // sanitize
         $this->username=htmlspecialchars(strip_tags($this->username));
-        $this->name=htmlspecialchars(strip_tags($this->name));
+        $this->password=htmlspecialchars(strip_tags($this->password));
+        $this->fullname=htmlspecialchars(strip_tags($this->fullname));
         $this->cardNo=htmlspecialchars(strip_tags($this->cardNo));
         $this->bankName=htmlspecialchars(strip_tags($this->bankName));
         $this->address=htmlspecialchars(strip_tags($this->address));
     
         // bind values
         $stmt->bindParam(":username", $this->username);
-        $stmt->bindParam(":name", $this->name);
+        $stmt->bindParam(":password", $this->password);
+        $stmt->bindParam(":fullname", $this->fullname);
         $stmt->bindParam(":cardNo", $this->cardNo);
         $stmt->bindParam(":bankName", $this->bankName);
         $stmt->bindParam(":address", $this->address);
@@ -76,7 +79,7 @@ class User{
     function readOne(){
         // query to read single record
         $query = "SELECT
-                    userID, username, name, cardNo, bankName, address
+                    userID, username, fullname, cardNo, bankName, address
                 FROM
                     " . $this->table_name . "
                 WHERE
@@ -98,7 +101,7 @@ class User{
     
         // set values to object properties //for the user
         $this->username = $row['username'];
-        $this->name = $row['name'];
+        $this->name = $row['fullname'];
         $this->cardNo = $row['cardNo'];
         $this->bankName = $row['bankName'];
         $this->address = $row['address'];
@@ -112,8 +115,7 @@ class User{
         $query = "UPDATE
                     " . $this->table_name . "
                 SET
-                    username = :username,
-                    name = :name,
+                    fullname = :fullname,
                     cardNo = :cardNo,
                     bankName = :bankName,
                     address = :address
@@ -124,8 +126,7 @@ class User{
         $stmt = $this->conn->prepare($query);
     
         // sanitize
-        $this->username=htmlspecialchars(strip_tags($this->username));
-        $this->name=htmlspecialchars(strip_tags($this->name));
+        $this->fullname=htmlspecialchars(strip_tags($this->fullname));
         $this->cardNo=htmlspecialchars(strip_tags($this->cardNo));
         $this->bankName=htmlspecialchars(strip_tags($this->bankName));
         $this->address=htmlspecialchars(strip_tags($this->address));
@@ -133,8 +134,7 @@ class User{
         
     
         // bind values
-        $stmt->bindParam(":username", $this->username);
-        $stmt->bindParam(":name", $this->name);
+        $stmt->bindParam(":fullname", $this->fullname);
         $stmt->bindParam(":cardNo", $this->cardNo);
         $stmt->bindParam(":bankName", $this->bankName);
         $stmt->bindParam(":address", $this->address);
@@ -171,40 +171,32 @@ class User{
         return false;
     }
 
-    // read user info with pagination
-    public function readPaging($from_record_num, $records_per_page){
+    function search($keywords){
     
-        // select query
+        // select all query
         $query = "SELECT
-                    userID, username, name, cardNo, bankName, address
+                    userID, password, username, fullname, cardNo, bankName, address
                 FROM
-                    " . $this->table_name . "
-                ORDER BY username ASC
-                LIMIT ?, ?";
+                    ". $this->table_name ." 
+                ORDER BY
+                    userID ASC";
     
         // prepare query statement
-        $stmt = $this->conn->prepare( $query );
+        $stmt = $this->conn->prepare($query);
     
-        // bind variable values
-        $stmt->bindParam(1, $from_record_num, PDO::PARAM_INT);
-        $stmt->bindParam(2, $records_per_page, PDO::PARAM_INT);
+        // sanitize
+        $keywords=htmlspecialchars(strip_tags($keywords));
+        $keywords = "%{$keywords}%";
+    
+        // bind
+        $stmt->bindParam(1, $keywords);
+        $stmt->bindParam(2, $keywords);
+        $stmt->bindParam(3, $keywords);
     
         // execute query
         $stmt->execute();
     
-        // return values from database
         return $stmt;
-    }
-
-    // used for paging user info
-    public function count(){
-        $query = "SELECT COUNT(*) as total_rows FROM " . $this->table_name . "";
-    
-        $stmt = $this->conn->prepare( $query );
-        $stmt->execute();
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-    
-        return $row['total_rows'];
     }
 
     }

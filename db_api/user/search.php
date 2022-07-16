@@ -3,27 +3,29 @@
     header("Access-Control-Allow-Origin: *");
     header("Content-Type: application/json; charset=UTF-8");
     
-
     // include database and object files
+    include_once '../config/core.php';
     include_once '../config/database.php';
     include_once '../objects/user.php';
     
-    // instantiate database and user object
+    // instantiate database and book object
     $database = new Database();
     $db = $database->getConnection();
     
     // initialize object
     $user = new User($db);
-
-
-    // query users
-    $stmt = $user->read();
+    
+    // get keywords
+    $keywords=isset($_GET["s"]) ? $_GET["s"] : "";
+    
+    // query user
+    $stmt = $user->search($keywords);
     $num = $stmt->rowCount();
     
     // check if more than 0 record found
     if($num>0){
     
-        // users array
+        // books array
         $users_arr=array();
         $users_arr["records"]=array();
     
@@ -38,12 +40,8 @@
     
             $user_item=array(
                 "userID" => $userID,
-                "password" => $password,
                 "username" => $username,
-                "fullname" => $fullname,
-                "cardNo" => $cardNo,
-                "bankName" => $bankName,
-                "address" => $address
+                "password" => $password
             );
     
             array_push($users_arr["records"], $user_item);
@@ -52,18 +50,17 @@
         // set response code - 200 OK
         http_response_code(200);
     
-        // show users data in json format
+        // show users data
         echo json_encode($users_arr);
     }
-    else{
     
+    else{
         // set response code - 404 Not found
         http_response_code(404);
     
-        // tell the user no users found
+        // tell the user no user found
         echo json_encode(
-            array("message" => "No users found.")
+            array("message" => "No user found.")
         );
     }
-
 ?>

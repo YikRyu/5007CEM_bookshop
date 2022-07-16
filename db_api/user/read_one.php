@@ -28,7 +28,7 @@
         $user_arr = array(
             "userID"=> $user->userID,
             "username" =>  $user->username,
-            "name" =>  $user->name,
+            "fullname" =>  $user->fullname,
             "cardNo" =>  $user->cardNo,
             "bankName" =>  $user->bankName,
             "address" => $user->address

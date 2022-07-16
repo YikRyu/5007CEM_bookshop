@@ -24,8 +24,7 @@
     $user->userID = $data->userID;
     
     // set user property values
-    $user->username = $data->username;
-    $user->name = $data->name;
+    $user->fullname = $data->fullname;
     $user->cardNo = $data->cardNo;
     $user->bankName = $data->bankName;
     $user->address = $data->address;

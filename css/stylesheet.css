@@ -66,6 +66,17 @@ button:hover{
     background-color:white;
 }
 
+button.button-disabled{
+    padding: 7px 10px 7px 10px;
+    display: block;
+    text-decoration: none;
+    font-size: 17px;
+    text-align:center;
+    border: 1px solid;
+    color: black;
+    background-color: grey;
+}
+
 input.button{
     margin: 5px;
     padding: 7px 10px 7px 10px;
@@ -88,18 +99,6 @@ input.button:hover{
     border: 1px solid;
     box-shadow: 0 0 6px grey;
     background-color:white;
-}
-
-input.button-disabled:disabled{
-    margin: 5px;
-    padding: 7px 10px 7px 10px;
-    display: block;
-    text-decoration: none;
-    font-size: 17px;
-    text-align:center;
-    border: 1px solid;
-    color: black;
-    background-color: grey;
 }
 
 textarea{
@@ -276,6 +275,19 @@ div.content-wrapper-wider{
 }
 
 /*content-index-listing*/
+table.book-table{
+    text-align: center;
+}
+
+li.book-table{
+    text-align: center;
+    display: inline-block;
+}
+
+td.book-table{
+    width: 25%;
+}
+
 div.img-book-table{
     width:95px;
     height:170px;
@@ -296,6 +308,15 @@ td.listing{
 }
 
 /*content-book*/
+p.book-detail{
+    font-size:30px;
+    text-decoration: underline;
+}
+
+p.book-detail-author{
+    font-size: 22px;
+}
+
 div.add-cart{
     margin-top:10px;
 }
@@ -314,6 +335,7 @@ input.add-cart{
 input.add-cart:hover{
     padding: 7px 10px 7px 10px;
     display:block;
+    text-decoration: none;
     font-size: 15px;
     text-align:center;
     color: aliceblue;
@@ -325,8 +347,7 @@ td.img-book-detail{
     padding:15px 15px 30px 10px;
 }
 
-/*book detail cover shadow*/
-div.img-book-detail{
+div.img-book-detail{ /*book detail cover shadow*/
     width:170px;
     height:305px;
     box-shadow: 0px 1px 3px 4px lightgrey;
@@ -414,19 +435,17 @@ div.cart{
     float:left;
 }
 
-td.cart{
-    padding:20px;
-}
-
-ul.cart{
-    list-style-type:none;
-}
-
 div.cart-price{
     float:right;
     padding-top:70px;
     padding-right:25px;
 }
+
+tr.cart-payment{
+    margin-right:0px;
+
+}
+
 
 /*content-payment*/
 h1.payment{
@@ -444,8 +463,19 @@ div.payment-content{
     margin-left:auto;
 }
 
+div.cart-button{
+    padding-right: 0px;
+    float: right;
+}
+
 table.payment{
-    width:200px;
+    width:400px;
+}
+
+table.payment-button{
+    margin-top:-30px;
+    float:right;
+    padding-right:0px;
 }
 
 td.payment{
@@ -454,7 +484,7 @@ td.payment{
 }
 
 h2.payment-total{
-    text-align:left;
+    text-align:right;
 }
 
 h2.payment-price{

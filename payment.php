@@ -56,21 +56,12 @@
             //loop to update book amount according to book ID stored
             foreach($cart as $value){
                 $bookID = $value;
-                //for fetching book amount
-                $query = "SELECT bookAmount FROM book WHERE bookID = $bookID";
-                $retval = mysqli_query($conn,$query) or die(mysqli_error($conn));
-                if (mysqli_num_rows($retval) > 0){
-                    $bookAmount = $row['bookAmount']; //setting the original book amount
-                }
 
-                $new_bookAmount = $bookAmount - 1;
-
-                $update_book_amount = "UPDATE book SET bookAmount = '$new_bookAmount' WHERE bookID = $bookID";
+                $update_book_amount = "UPDATE book SET bookAmount = (bookAmount-1) WHERE bookID = $bookID";
                 $update_book_retval = mysqli_query($conn,$update_book_amount);
                 if(!$update_book_retval){
                     echo "<script type=\"text/javascript\">alert(\"Something went wrong....\");</script>";
                 }
-                $update_book_result = mysqli_query($conn, $query) or die(mysqli_error($conn));
             }
         }
 

@@ -1,7 +1,7 @@
 # 5007CEM_Web Development_Bookshop
 
-*Student Name:* Tan Zhi Shan
-<br/> *CUID:* 12673368
+Student Name: Tan Zhi Shan
+<br/> CUID: 12673368
 
 This repository have codes regarding the website and REST API that are developed for project regarding the subject. The features that are available in the website are: 
 <br/>i. Login

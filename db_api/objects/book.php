@@ -187,7 +187,7 @@ class Book{
                         book_genre g
                             ON b.bookGenre = g.genreID
                 WHERE
-                    b.bookName LIKE ? OR b.bookDesc LIKE ? OR g.genreName LIKE ?
+                    b.bookName LIKE ? b.bookISBN LIKE ? OR b.bookAuthor LIKE ? OR g.genreName LIKE ?
                 ORDER BY
                     b.bookName ASC";
     
@@ -202,6 +202,7 @@ class Book{
         $stmt->bindParam(1, $keywords);
         $stmt->bindParam(2, $keywords);
         $stmt->bindParam(3, $keywords);
+        $stmt->bindParam(4, $keywords);
     
         // execute query
         $stmt->execute();

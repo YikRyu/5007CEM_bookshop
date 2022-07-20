@@ -46,7 +46,7 @@ class User{
         $query = "INSERT INTO
                     " . $this->table_name . "
                 SET
-                    username=:username, password=:password, fullname=:fullname" ;
+                    username=:username, password=:password, fullname=:fullname, cardNo=:cardNo, bankName=:bankName, address=:address" ;
     
         // prepare query
         $stmt = $this->conn->prepare($query);
@@ -55,11 +55,17 @@ class User{
         $this->username=htmlspecialchars(strip_tags($this->username));
         $this->password=htmlspecialchars(strip_tags($this->password));
         $this->fullname=htmlspecialchars(strip_tags($this->fullname));
+        $this->cardNo=htmlspecialchars(strip_tags($this->cardNo));
+        $this->bankName=htmlspecialchars(strip_tags($this->bankName));
+        $this->address=htmlspecialchars(strip_tags($this->address));
     
         // bind values
         $stmt->bindParam(":username", $this->username);
         $stmt->bindParam(":password", $this->password);
         $stmt->bindParam(":fullname", $this->fullname);
+        $stmt->bindParam(":cardNo", $this->cardNo);
+        $stmt->bindParam(":bankName", $this->bankName);
+        $stmt->bindParam(":address", $this->address);
     
         // execute query
         if($stmt->execute()){
@@ -73,7 +79,7 @@ class User{
     function readOne(){
         // query to read single record
         $query = "SELECT
-                    userID, username, fullname, cardNo, bankName, address
+                    userID, username, password, fullname, cardNo, bankName, address
                 FROM
                     " . $this->table_name . "
                 WHERE
@@ -95,7 +101,8 @@ class User{
     
         // set values to object properties //for the user
         $this->username = $row['username'];
-        $this->name = $row['fullname'];
+        $this->fullname = $row['fullname'];
+        $this->password = $row['password'];
         $this->cardNo = $row['cardNo'];
         $this->bankName = $row['bankName'];
         $this->address = $row['address'];
@@ -169,11 +176,13 @@ class User{
     
         // select all query
         $query = "SELECT
-                    username
+                    userID, username, password
                 FROM
                     ". $this->table_name ." 
-                ORDER BY
-                    userID ASC";
+                WHERE
+                    username LIKE ?
+                LIMIT
+                    0,1";
     
         // prepare query statement
         $stmt = $this->conn->prepare($query);
@@ -184,8 +193,6 @@ class User{
     
         // bind
         $stmt->bindParam(1, $keywords);
-        $stmt->bindParam(2, $keywords);
-        $stmt->bindParam(3, $keywords);
     
         // execute query
         $stmt->execute();

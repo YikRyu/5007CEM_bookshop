@@ -26,7 +26,6 @@
     if($user->username!=null){
         // create array
         $user_arr = array(
-            "userID"=> $user->userID,
             "username" =>  $user->username,
             "fullname" =>  $user->fullname,
             "cardNo" =>  $user->cardNo,

@@ -130,11 +130,9 @@
                           ORDER BY
                                 bookName ASC";
                 $retval = mysqli_query($conn,$query);
-
                 if(!$retval){
                     echo "<h1>No search result returned!</h1>";
                 }
-                
                 $result = mysqli_query($conn, $query) or die(mysqli_error($conn));
 
                 if (mysqli_num_rows($result) > 0) {
@@ -215,9 +213,6 @@
             </table>
         </div>
     </footer>
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>
 
 </html>
